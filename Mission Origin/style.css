@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color:hsl(170, 100%, 26%);
+    --secundary-color: hsl(180, 14%, 97%);
+    --cashier-color: hsl(148, 23%, 89%);
+    --headline: hsl(210, 11%, 15%);
+    --paragraph: hsl(210, 9%, 31%);
+
+    
+
+    font-size: 62.5%;/*Regra de 3 (10*100%)/16=62,5% para transformar 16px em 10px 1rem=10px (acessibilidade)*/
+}
+
+body{
+    font-family: 'DM Sans';
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+header{
+    width: 37.5rem;
+    height: 108rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 4.1rem;
+    background: var(--cashier-color);
+    
+}
+
+h4{
+    font-size: 1.4rem;
+    color:var(--primary-color);
+    margin-bottom:1.6rem;
+}
+h1{
+    font-size: 3.4rem;
+    color: var(--headline);
+    Line-height: 130%;
+    margin-bottom: 2.4rem;
+}
+p{
+    font-size: 1.8rem;
+    color:var(--paragraph);
+    margin-bottom: 3.2rem;
+}
+h3{
+    font-size: 4.8rem;
+}
+button{
+    background:var(--primary-color);
+    border: none;
+    margin-bottom: 6.5rem;
+    height: 6.2rem;
+    width: 26.3rem;
+    border-radius: 4rem;
+    color:white;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+section{
+    background-color:var(--secundary-color);
+    width: 32.7rem;
+    margin-right: auto;
+    margin-left: auto;
+}
