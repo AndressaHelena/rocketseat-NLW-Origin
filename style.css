@@ -27,6 +27,8 @@ body{
     font-family: 'DM Sans';
     font-size: 1.6rem;
     text-align: center;
+
+    overflow: overlay;
 }
 
 .wrapper{
@@ -170,12 +172,47 @@ nav.scroll svg:nth-child(1) path{
     fill:white;
 }
 
-nav.scroll svg:nth-child(2) path{
+nav.scroll button path{
     stroke: white;    
 }
 
+nav button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 /*------------Menu-expanded------------*/
-.menu, .close-menu{
+body.menu-expanded{
+    overflow: hidden;  
+}
+
+body.menu-expanded > :not(nav){
+    /* aplica nenhum display (> primeiro nível)
+    exceto o nav (acessibilidade) */
+    display: none;
+}
+
+.menu ul:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+
+    margin-top: 6rem;
+
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.1rem; 
+}
+
+.menu ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+
+.menu, .close-menu, 
+body.menu-expanded .open-menu{
     opacity: 0;
     visibility: hidden;
 }
@@ -185,15 +222,58 @@ body.menu-expanded .close-menu{
     visibility: visible;
 }
 
+
 body.menu-expanded .menu{
     position: fixed;
     top:0;
     left: 0;
-    background: var(--primary-color)
+    background: var(--primary-color);
+
+    width: 100vw;
+    height: 100vw;
+
+    padding-top: var(--nav-heigth);
 }
 
 body.menu-expanded nav{
     position: relative;
 }
 
+.menu .button{
+    background: white;
+    color: var(--primary-color);
+
+    border-radius: 4rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    display: inline-block;
+    padding: 1.6rem 3.2rem;
+
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+}
+
+.social-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:3.2rem;
+}
+
+body.menu-expanded .logo,
+body.menu-expanded  button {
+    position: relative;
+    z-index: 100;
+}
+body.menu-expanded .logo path{
+    fill:white;
+}
+
+body.menu-expanded button path{
+    stroke: white;    
+}
 
