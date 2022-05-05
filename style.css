@@ -1,6 +1,7 @@
 /*------------Geral------------*/
 *{
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -34,6 +35,9 @@ body{
     padding-inline: 2.4rem;
 }
 
+ul{
+    list-style: none;
+}
 /*------------HEADER------------*/
 header{
 
@@ -43,7 +47,7 @@ header{
 
 header::before{
     content: "";
-    width: 100vw;
+    width: 100%;
     height: calc(108rem + var(--nav-heigth));
     background-color: var(--brand-ligth);
     display: block;
@@ -58,6 +62,7 @@ header h4{
     font-size: 1.4rem;
     color:var(--primary-color);
     margin-bottom:1.6rem;
+    
 }
 
 header h1{
@@ -73,7 +78,7 @@ header p{
     margin-bottom: 3.2rem;
 }
 
-button{
+button.agendar{
     background:var(--primary-color);
 
     border: none;
@@ -138,9 +143,7 @@ header img{
 /*------------NAVIGATION------------*/
 nav{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-
+    
     height: var(--nav-heigth);
 
     padding: 1.6rem 2.4rem;
@@ -150,3 +153,47 @@ nav{
     left:50%;
     transform: translateX(-50%);
 }
+
+div.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+
+}
+nav.scroll{
+    background: var(--primary-color);
+    width: 100vw;
+    
+}
+nav.scroll svg:nth-child(1) path{
+    fill:white;
+}
+
+nav.scroll svg:nth-child(2) path{
+    stroke: white;    
+}
+
+/*------------Menu-expanded------------*/
+.menu, .close-menu{
+    opacity: 0;
+    visibility: hidden;
+}
+body.menu-expanded .menu,
+body.menu-expanded .close-menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+body.menu-expanded .menu{
+    position: fixed;
+    top:0;
+    left: 0;
+    background: var(--primary-color)
+}
+
+body.menu-expanded nav{
+    position: relative;
+}
+
+
