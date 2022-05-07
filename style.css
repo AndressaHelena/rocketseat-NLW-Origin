@@ -21,11 +21,16 @@
 
 }
 
+html {
+    /* chrome://flags/#smooth-scrolling */
+    scroll-behavior: smooth;
+}
+
 html,
 body {
     width: 100%;
     height: 100%;
-    background-color: var(--bg-light);
+    
 }
 
 body {
@@ -34,6 +39,7 @@ body {
     text-align: center;
 
     overflow: overlay;
+    background-color: var(--bg-light);
 }
 
 .wrapper {
@@ -45,7 +51,8 @@ body {
 ul {
     list-style: none;
 }
-section{
+
+section {
     padding-block: 10rem;
 }
 
@@ -91,9 +98,8 @@ header p {
     margin-bottom: 3.2rem;
 }
 
-button.agendar {
+#home .agendar-home {
     background: var(--primary-color);
-
     border: none;
     border-radius: 4rem;
 
@@ -113,6 +119,8 @@ button.agendar {
     gap: 1.6rem;
 
     margin-inline: auto;
+    
+    
 }
 
 header img {
@@ -168,21 +176,21 @@ nav {
     transform: translateX(-50%);
 }
 
-div.wrapper {
+nav .wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    
 
 }
 
 nav.scroll {
     background: var(--primary-color);
-    width: 100vw;
+    
 
 }
 
-nav.scroll svg:nth-child(1) path {
+nav.scroll .logo path {
     fill: white;
 }
 
@@ -199,12 +207,13 @@ nav button {
 /*------------Menu-expanded------------*/
 body.menu-expanded {
     overflow: hidden;
+    
 }
 
-body.menu-expanded> :not(nav) {
+body.menu-expanded > :not(nav) {
     /* aplica nenhum display (> primeiro nível)
     exceto o nav (acessibilidade) */
-    display: none;
+    visibility: hidden;
 }
 
 .menu ul:nth-child(1) {
@@ -246,13 +255,22 @@ body.menu-expanded .menu {
     background: var(--primary-color);
 
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
 
     padding-top: var(--nav-heigth);
+
+    transition: transform 300ms;
+    transform: translateY(0);
+    
+}
+.menu{
+    transform: translateY(100%);
+
 }
 
 body.menu-expanded nav {
     position: relative;
+    
 }
 
 .menu .button {
@@ -267,7 +285,7 @@ body.menu-expanded nav {
     text-decoration: none;
 
     display: inline-block;
-    padding: 1.6rem 3.2rem;
+    padding: 16px 32px;
 
     margin-top: 4.8rem;
     margin-bottom: 8rem;
@@ -281,7 +299,7 @@ body.menu-expanded nav {
 }
 
 body.menu-expanded .logo,
-body.menu-expanded button {
+body.menu-expanded nav button {
     position: relative;
     z-index: 100;
 }
@@ -317,7 +335,8 @@ body.menu-expanded button path {
 
     margin-bottom: 6rem;
 }
-#services .cards{
+
+#services .cards {
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
@@ -332,6 +351,7 @@ body.menu-expanded button path {
     border: 1px solid var(--brand-ligth);
     border-radius: 0.6rem;
 }
-#services .card h3{
-margin-block: 1.6rem;
+
+#services .card h3 {
+    margin-block: 1.6rem;
 }
